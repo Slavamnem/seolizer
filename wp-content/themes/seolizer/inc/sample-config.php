@@ -449,6 +449,49 @@
             ),
 	    )
     ) );
+	
+	//About us
+	Redux::setSection( $opt_name, array(
+        'title'            => __( 'Раздел о нас', 'redux-framework-demo' ),
+        'id'               => 'seolizer-about-us',
+        'desc'             => __( '', 'redux-framework-demo' ),
+        'customizer_width' => '400px',
+        'icon'             => 'el el-home',
+		'fields'           => array(
+			array(
+                'id'          => 'seolizer-about-us-slides',
+                'type'        => 'slides',
+                'title'       => __( 'Блоки раздела', 'redux-framework-demo' ),
+                'subtitle'    => __( '', 'redux-framework-demo' ),
+                'desc'        => __( '', 'redux-framework-demo' ),
+                'placeholder' => array(
+                    'title'       => __( 'Заголовок', 'redux-framework-demo' ),
+                    'description' => __( 'Описание', 'redux-framework-demo' ),
+                    'url'         => __( 'Give us a link!', 'redux-framework-demo' ),
+					'url2'         => __( 'Give us a link!', 'redux-framework-demo' ),
+                ),
+            ),
+		)
+    ) );
+
+    /*Redux::setSection( $opt_name, array(
+        'title'            => __( 'Основное', 'redux-framework-demo' ),
+        'id'               => 'basic-checkbox',
+        'subsection'       => true,
+        'customizer_width' => '450px',
+        'desc'             => __( 'For full documentation on this field, visit: ', 'redux-framework-demo' ) . '<a href="//docs.reduxframework.com/core/fields/checkbox/" target="_blank">docs.reduxframework.com/core/fields/checkbox/</a>',
+        'fields'           => array(
+			array(
+                'id'       => 'seolizer-logo',
+                'type'     => 'text',
+                'title'    => __( 'Логотип', 'redux-framework-demo' ),
+                'subtitle' => __( '', 'redux-framework-demo' ),
+                'desc'     => __( 'Логотип в шапке сайта', 'redux-framework-demo' ),
+                'validate' => 'html', //see http://codex.wordpress.org/Function_Reference/wp_kses_post
+                'default'  => 'SEOlizer'
+            ),
+		)
+	));*/
     /*Redux::setSection( $opt_name, array(
         'title'            => __( 'Radio', 'redux-framework-demo' ),
         'id'               => 'basic-Radio',

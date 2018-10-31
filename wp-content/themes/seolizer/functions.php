@@ -168,6 +168,10 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 
 require get_template_directory() . '/inc/sample-config.php';
 
+require get_template_directory() . '/inc/post-types.php';
+
+require get_template_directory() . '/inc/portfolio-extra-fields.php';
+
 
 
 
