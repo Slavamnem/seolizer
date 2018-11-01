@@ -474,6 +474,153 @@
 		)
     ) );
 
+    //Why seo
+    Redux::setSection( $opt_name, array(
+        'title'            => __( 'Раздел зачем нужно SEO-продвижение', 'redux-framework-demo' ),
+        'id'               => 'seolizer-why-seo',
+        'desc'             => __( '', 'redux-framework-demo' ),
+        'customizer_width' => '400px',
+        'icon'             => 'el el-home',
+        'fields'           => array(
+            array(
+                'id'        => 'seolizer-why-seo-title',
+                'type'      => 'text',
+                'title'     => __( 'Заголовок', 'redux-framework-demo' ),
+                'subtitle'  => __( '', 'redux-framework-demo' ),
+                'desc'      => __( '', 'redux-framework-demo' ),
+                'default'   => '',
+                'text_hint' => array(
+                    'title'   => 'Hint Title',
+                    'content' => 'Hint content about this field!'
+                )
+            ),
+            array(
+                'id'        => 'seolizer-why-seo-description',
+                'type'      => 'textarea',
+                'title'     => __( 'Описание', 'redux-framework-demo' ),
+                'subtitle'  => __( '', 'redux-framework-demo' ),
+                'desc'      => __( '', 'redux-framework-demo' ),
+                'default'   => '',
+                'text_hint' => array(
+                    'title'   => 'Hint Title',
+                    'content' => 'Hint content about this field!'
+                )
+            ),
+            array(
+                'id'          => 'seolizer-why-seo-slides',
+                'type'        => 'slides',
+                'title'       => __( 'Блоки раздела', 'redux-framework-demo' ),
+                'subtitle'    => __( '', 'redux-framework-demo' ),
+                'desc'        => __( '', 'redux-framework-demo' ),
+                'placeholder' => array(
+                    'title'       => __( 'Заголовок', 'redux-framework-demo' ),
+                    'description' => __( 'Описание', 'redux-framework-demo' ),
+                    'url'         => __( 'Give us a link!', 'redux-framework-demo' ),
+                    'url2'         => __( 'Give us a link!', 'redux-framework-demo' ),
+                ),
+            ),
+        )
+    ) );
+
+    //Advantages
+    Redux::setSection( $opt_name, array(
+        'title'            => __( 'Раздел преимущества работы с нами', 'redux-framework-demo' ),
+        'id'               => 'seolizer-advantages',
+        'desc'             => __( '', 'redux-framework-demo' ),
+        'customizer_width' => '400px',
+        'icon'             => 'el el-home',
+        'fields'           => array(
+            array(
+                'id'        => 'seolizer-advantages-title',
+                'type'      => 'text',
+                'title'     => __( 'Заголовок', 'redux-framework-demo' ),
+                'subtitle'  => __( '', 'redux-framework-demo' ),
+                'desc'      => __( '', 'redux-framework-demo' ),
+                'default'   => '',
+                'text_hint' => array(
+                    'title'   => 'Hint Title',
+                    'content' => 'Hint content about this field!'
+                )
+            ),
+            array(
+                'id'          => 'seolizer-advantages-slides',
+                'type'        => 'slides',
+                'title'       => __( 'Блоки раздела', 'redux-framework-demo' ),
+                'subtitle'    => __( '', 'redux-framework-demo' ),
+                'desc'        => __( '', 'redux-framework-demo' ),
+                'placeholder' => array(
+                    'title'       => __( 'Заголовок', 'redux-framework-demo' ),
+                    'description' => __( 'Описание', 'redux-framework-demo' ),
+                    'url'         => __( 'Give us a link!', 'redux-framework-demo' ),
+                    'url2'         => __( 'Give us a link!', 'redux-framework-demo' ),
+                ),
+            ),
+        )
+    ) );
+
+    // Steps
+    Redux::setSection( $opt_name, array(
+        'title'            => __( 'Раздел этапы продвижения', 'redux-framework-demo' ),
+        'id'               => 'seolizer-steps',
+        'desc'             => __( '', 'redux-framework-demo' ),
+        'customizer_width' => '400px',
+        'icon'             => 'el el-home',
+        'fields'           => array(
+            array(
+                'id'        => 'seolizer-steps-title',
+                'type'      => 'text',
+                'title'     => __( 'Заголовок', 'redux-framework-demo' ),
+                'subtitle'  => __( '', 'redux-framework-demo' ),
+                'desc'      => __( '', 'redux-framework-demo' ),
+                'default'   => '',
+                'text_hint' => array(
+                    'title'   => 'Hint Title',
+                    'content' => 'Hint content about this field!'
+                )
+            ),
+            array(
+                'id'        => 'seolizer-steps-description',
+                'type'      => 'textarea',
+                'title'     => __( 'Описание', 'redux-framework-demo' ),
+                'subtitle'  => __( '', 'redux-framework-demo' ),
+                'desc'      => __( '', 'redux-framework-demo' ),
+                'default'   => '',
+                'text_hint' => array(
+                    'title'   => 'Hint Title',
+                    'content' => 'Hint content about this field!'
+                )
+            ),
+            array(
+                'id'       => 'seolizer-steps-delimeter',
+                'type'     => 'media',
+                'url'      => true,
+                'title'    => __( 'Картинка разделяющая колонки', 'redux-framework-demo' ),
+                'compiler' => 'true',
+                //'mode'      => false, // Can be set to false to allow any media type, or can also be set to any mime type.
+                'desc'     => __( 'Разделитель', 'redux-framework-demo' ),
+                'subtitle' => __( '', 'redux-framework-demo' ),
+                'default'  => array( 'url' => 'http://seolizer/wp-content/uploads/2018/11/steps.png' ),
+                //'hint'      => array(
+                //    'title'     => 'Hint Title',
+                //    'content'   => 'This is a <b>hint</b> for the media field with a Title.',
+                //)
+            ),
+            array(
+                'id'          => 'seolizer-steps-slides',
+                'type'        => 'slides',
+                'title'       => __( 'Блоки раздела', 'redux-framework-demo' ),
+                'subtitle'    => __( '', 'redux-framework-demo' ),
+                'desc'        => __( '', 'redux-framework-demo' ),
+                'placeholder' => array(
+                    'title'       => __( 'Заголовок', 'redux-framework-demo' ),
+                    'description' => __( 'Описание', 'redux-framework-demo' ),
+                    'url'         => __( 'Give us a link!', 'redux-framework-demo' ),
+                    'url2'         => __( 'Give us a link!', 'redux-framework-demo' ),
+                ),
+            ),
+        )
+    ) );
+
     /*Redux::setSection( $opt_name, array(
         'title'            => __( 'Основное', 'redux-framework-demo' ),
         'id'               => 'basic-checkbox',

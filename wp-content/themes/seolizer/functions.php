@@ -123,7 +123,10 @@ function seolizer_scripts() {
 	//wp_enqueue_style( 'seolizer-style', get_stylesheet_uri() );
 	
 	wp_enqueue_style( 'seolizer-styles', get_template_directory_uri() . '/layouts/styles.min.css', array() );
-	wp_enqueue_script( 'seolizer-app-min', get_template_directory_uri() . '/js/app.min.js', array() );
+	//wp_enqueue_script( 'seolizer-app-min', get_template_directory_uri() . '/js/app.min.js', array(), 'v1', true );
+
+	//wp_enqueue_script( 'seolizer-jquery', get_template_directory_uri() . '/js/jquery.js', array(), 'v3', true );
+	wp_enqueue_script( 'seolizer-main-js', get_template_directory_uri() . '/js/main.js', array(), 'v1', true );
 
 	wp_enqueue_script( 'seolizer-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 
@@ -171,6 +174,11 @@ require get_template_directory() . '/inc/sample-config.php';
 require get_template_directory() . '/inc/post-types.php';
 
 require get_template_directory() . '/inc/portfolio-extra-fields.php';
+
+require get_template_directory() . '/inc/post-extra-fields.php';
+
+require get_template_directory() . '/inc/helpers_functions.php';
+
 
 
 

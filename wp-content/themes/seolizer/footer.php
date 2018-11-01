@@ -53,7 +53,7 @@ global $redux_demo;
 							<a href="mailto:<?=$redux_demo['seolizer-email']?>" class="email"><?=$redux_demo['seolizer-email']?></a>
 						</div>
 						<div class="wrap_btn">
-							<a href="" class="btn_callback">
+							<a href="#" class="btn_callback eModal-1">
 								<?=$redux_demo['seolizer-button-call']?>
 							</a>
 						</div>
