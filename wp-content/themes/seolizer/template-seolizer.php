@@ -12,8 +12,7 @@ global $redux_demo;
 		<div class="container">
 			<h2>Как мы заставляем ваш сайт продавать</h2>
 			<div class="about_list">
-				<?php
-				foreach($redux_demo['seolizer-about-us-slides'] as $slide): ?>
+				<?php foreach($redux_demo['seolizer-about-us-slides'] as $slide): ?>
 					<div class="about_item">
 						<div class="wrap_img">
 							<img src="<?php echo $slide['image']; ?>" alt="img" />
@@ -26,54 +25,63 @@ global $redux_demo;
 						</div>
 					</div>
 				<? endforeach; ?>
-				<!--<div class="about_item">
-					<div class="wrap_img">
-						<img src="img/1.png" alt="img" />
-					</div>
-					<div class="wrap_text">
-						<strong>Аудит сайта</strong>
-						<p>
-							Мы находим всё,  что мешает сайту расти. Проводим технический анализ, аудит ссылочной массы, оценку юзабилити - продающих качеств сайта, анализ сайтов конкурентов
-						</p>
-					</div>
-				</div>
-				<div class="about_item">
-					<div class="wrap_img">
-						<img src="img/2.png" alt="img" />
-					</div>
-					<div class="wrap_text">
-						<strong>Исправление ошибок</strong>
-						<p>
-							Мы тестируем и исправляем ошибки и недоработки в работе каждой страницы и формы сайта; ускоряем загрузку, верстку и отображение сайта на адаптивной версии дизайна
-						</p>
-					</div>								
-				</div>
-				<div class="about_item">
-					<div class="wrap_img">
-						<img src="img/3.png" alt="img" />
-					</div>
-					<div class="wrap_text">
-						<strong>Продвижение в TOP</strong>
-						<p>
-							Зная основные алгоритмы ранжирования сайтов в поисковых системах, наша команда выведет Ваш проект в ТОП, а это больше переходов и больше заказов для Вашего бизнеса
-						</p>
-					</div>
-				</div>
-				<div class="about_item">
-					<div class="wrap_img">
-						<img src="img/4.png" alt="img" />
-					</div>
-					<div class="wrap_text">
-						<strong>Целевой трафик</strong>
-						<p>
-							Мы  привлекаем к вашему сайту внимание только потенциальных покупателей, то  есть на ваш сайт приходят именно те, кто может у вас что-то купить. Вы  не тратите деньги на привлечение случайных посетителей
-						</p>
-					</div>
-				</div>-->
 			</div>
 		</div>
 	</section>	
-	<br><br><br><br><br><br><br>
+
+
+    <section class="slider_carousel dark">
+        <div class="container">
+            <h2>Портфолио</h2>
+
+            <div class="slider_wrapper">
+                <div class="slider_list">
+
+                    <?php $args = array( 'post_type' => 'portfolio', 'posts_per_page' => 10);
+                    $loop = new WP_Query( $args );
+                    $counter = 1;
+                    while ( $loop->have_posts() ) : $loop->the_post(); ?>
+
+                        <div class="slider_item <?php echo $counter == 1? "active":"next"; ?>" id = "item<?=$counter?>" data-id='<?=$counter?>'>
+                            <h3 class="title"><?php the_title(); ?></h3>
+                            <?php the_content(); ?>
+                            <div class="wrapper_descr">
+                                <div class="wrap_img">
+                                    <?php the_post_thumbnail(); ?>
+                                </div>
+                                <div class="wrap_text">
+                                    <a href="" class="title_website">https://izobility.com/</a>
+                                    <dl>
+                                        <dt>Тематика:</dt>
+                                        <dd><?php echo get_metadata("post", $post->ID, 'theme', 1) ?></dd>
+                                        <dt>Рост трафика:</dt>
+                                        <dd><?php echo get_metadata("post", $post->ID, 'growth', 1) ?></dd>
+                                        <dt>Срок продвижения:</dt>
+                                        <dd><?php echo get_metadata("post", $post->ID, 'advance_term', 1) ?></dd>
+                                        <dt>Посетители:</dt>
+                                        <dd><?php echo get_metadata("post", $post->ID, 'visitors', 1) ?></dd>
+                                    </dl>
+                                    <div class="wrap_btn">
+                                        <a href="">Подробнее</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <?php $counter++; ?>
+                    <?php endwhile;  // End of the loop. ?>
+
+                </div>
+                <div class="prev_slide">
+                    <img src="<? echo get_template_directory_uri()."/img/prev.png";?>" alt="pic" />
+                </div>
+                <div class="next_slide">
+                    <img src="<? echo get_template_directory_uri()."/img/next.png";?>" alt="pic" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 	
 </div>
 
