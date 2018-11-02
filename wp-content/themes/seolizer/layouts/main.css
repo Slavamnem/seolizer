@@ -1,0 +1,48 @@
+#post_modal{
+    display:none;
+    /*position: absolute;*/
+    position: fixed;
+    overflow: auto;
+    height:600px;
+    border:3px solid grey;
+    border-radius:15px;
+    z-index: 9999;
+    background-color:white;
+    padding:20px;
+    left:25%;
+    width:50%;
+
+    top: 10%;
+
+    /*margin-top:50px;*/
+}
+.modal-img{
+    left:10%;
+    width:80%;
+}
+.modal-img img{
+    width:100%;
+}
+.close{
+    float:right;
+    font-size:14px;
+}
+.close:hover{
+    color:red;
+    cursor:pointer;
+}
+
+#overlay {
+    z-index:3; /* пoдлoжкa дoлжнa быть выше слoев элементoв сaйтa, нo ниже слoя мoдaльнoгo oкнa */
+    position:fixed; /* всегдa перекрывaет весь сaйт */
+    background-color:#000; /* чернaя */
+    opacity:0.8; /* нo немнoгo прoзрaчнa */
+    -moz-opacity:0.8; /* фикс прозрачности для старых браузеров */
+    filter:alpha(opacity=80);
+    width:100%;
+    height:100%; /* рaзмерoм вo весь экрaн */
+    top:0; /* сверху и слевa 0, oбязaтельные свoйствa! */
+    left:0;
+    cursor:pointer;
+    display:none; /* в oбычнoм сoстoянии её нет) */
+}

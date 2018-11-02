@@ -1,21 +1,10 @@
 <?php
 
-function getDatesDiff($date1, $date2, $part)
+function getDatesDiff($date1, $date2)
 {
     $diff = abs(strtotime($date2) - strtotime($date1));
-    $years = floor($diff / (365*60*60*24));
-    $months = floor(($diff - $years * 365*60*60*24) / (30*60*60*24));
-    $days = floor(($diff - $years * 365*60*60*24 - $months*30*60*60*24)/ (60*60*24));
-    switch($part){
-        case 'years':
-            return $years;
-        case 'months':
-            return $months;
-        case 'days':
-            return $days > 0 ?  $days." ".days($days)." назад" : "сегодня";
-        default:
-            return $days;
-    }
+    $days = floor($diff / (60*60*24));
+    return $days > 0 ?  $days." ".days($days)." назад" : "сегодня";
 }
 function days($days)
 {

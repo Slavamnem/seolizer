@@ -121,11 +121,13 @@ add_action( 'widgets_init', 'seolizer_widgets_init' );
  */
 function seolizer_scripts() {
 	//wp_enqueue_style( 'seolizer-style', get_stylesheet_uri() );
-	
-	wp_enqueue_style( 'seolizer-styles', get_template_directory_uri() . '/layouts/styles.min.css', array() );
-	//wp_enqueue_script( 'seolizer-app-min', get_template_directory_uri() . '/js/app.min.js', array(), 'v1', true );
 
-	//wp_enqueue_script( 'seolizer-jquery', get_template_directory_uri() . '/js/jquery.js', array(), 'v3', true );
+	wp_enqueue_style( 'seolizer-styles', get_template_directory_uri() . '/layouts/styles.min.css', array() );
+	wp_enqueue_style( 'seolizer-main-css', get_template_directory_uri() . '/layouts/main.css', array() );
+
+	//wp_enqueue_script( 'seolizer-app-min', get_template_directory_uri() . '/js/app.min.js', array(), 'v1', true );
+	wp_enqueue_script( 'seolizer-jquery', get_template_directory_uri() . '/js/jquery.js', array(), 'v3', true );
+
 	wp_enqueue_script( 'seolizer-main-js', get_template_directory_uri() . '/js/main.js', array(), 'v1', true );
 
 	wp_enqueue_script( 'seolizer-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
