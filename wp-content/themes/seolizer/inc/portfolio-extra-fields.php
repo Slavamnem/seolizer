@@ -40,13 +40,13 @@ add_action("save_post", "portfolio_fields_box_save");
 
 function portfolio_fields_box_save($post_id){
 
-    $_POST['portfolio'] = array_map( 'sanitize_text_field', (array)$_POST['portfolio'] ); // чистим все данные от пробелов по краям
+    $_POST['portfolio'] = array_map( 'sanitize_text_field', (array)$_POST['portfolio'] );
     foreach( $_POST['portfolio'] as $key => $value ){
         if( empty($value) ){
-            delete_post_meta( $post_id, $key ); // удаляем поле если значение пустое
+            delete_post_meta( $post_id, $key );
             continue;
         }
-        update_post_meta( $post_id, $key, $value ); // add_post_meta() работает автоматически
+        update_post_meta( $post_id, $key, $value );
     }
 
 }

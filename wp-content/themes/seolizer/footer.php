@@ -73,7 +73,7 @@ global $redux_demo;
 					map: map,
 					title: 'ул. 2-ая Черногрязская д. 7 к.2',
 					icon: {
-						url: "img/marker.png",
+						url: "<? echo get_template_directory_uri()."/img/marker.png";?>",
 						scaledSize: new google.maps.Size(30, 42)
 					}
 				});

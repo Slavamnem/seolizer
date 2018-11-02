@@ -122,7 +122,6 @@ global $redux_demo;
                             <strong><?php echo $slide['title'];?></strong>
                             <p>
                                 <?php echo $slide['description'];?>
-                                <?php //print_r($redux_demo); ?>
                             </p>
                         </div>
                     </div>
@@ -194,10 +193,18 @@ global $redux_demo;
         </div>
     </section>
 
+    <section class="order dark" id="order">
+        <div class="container">
+            <h2>Заказать расчёт</h2>
+            <p class="order_descr">Чтобы оценить стоимость работ, заполните форму ниже:</p>
+            <?php echo do_shortcode('[contact-form-7 id="81" title="Заказать расчёт" html_class="order_form"]');?>
+        </div>
+    </section>
+
 
     <section class="news light">
         <div class="container">
-            <h2>Последнии новости SEO мира</h2>
+            <h2>Последние новости SEO мира</h2>
 
             <div id="post_modal" class="news_list def_popup"></div>
             <div id="overlay"></div>
@@ -248,79 +255,16 @@ global $redux_demo;
         </div>
     </section>
 
-    <section class="order dark" id="order">
-        <div class="container">
-            <h2>Заказать расчёт</h2>
-            <p class="order_descr">Чтобы оценить стоимость работ, заполните форму ниже:</p>
-
-            <div class="order_list">
-                <div class="order_item">
-                    <p class="title">
-                        Какие услуги Вам интересны?
-                    </p>
-                    <ul class="order_service_list">
-                        <li>SEO-опитимизация</li>
-                        <li>Контекстная реклама</li>
-                        <li>SMM-продвижение</li>
-                        <li>Продвижение видео</li>
-                    </ul>
-                </div>
-                <div class="order_item">
-                    <p class="title">
-                        Информация о Вас:
-                    </p>
-                    <form action="" class="order_form">
-                        <label for="">
-                            <input type="text" name="name" placeholder="Ваше имя*" required />
-                        </label>
-                        <label for="">
-                            <input type="tel" name="tel" placeholder="Ваш телефон*" required />
-                        </label>
-                        <label for="">
-                            <input type="text" name="email" placeholder="Ваш e-mail" />
-                        </label>
-                        <label for="">
-                            <input type="text" name="site" placeholder="Ваш сайт"  />
-                        </label>
-                    </form>
-                </div>
-                <div class="order_item">
-                    <p class="title">
-                        Предполагаемый бюджет?
-                    </p>
-                    <form action="">
-                        <input type="text" id="value_sum" name="value_sum" value="" />
-                    </form>
-
-                    <div class="block_price">
-                        <div class="item_count">
-                            20 000 ₽
-                        </div>
-                        <div class="item_count">
-                            800 000 ₽
-                        </div>
-                    </div>
-
-                    <div class="block_cost">
-                        60 000 ₽
-                    </div>
-                </div>
-            </div>
-            <div class="wrap_btn">
-                <a href="">
-                    Рассчитать
-                </a>
-            </div>
-        </div>
-    </section>
 
     <section class="google_map">
         <div id="map"></div>
         <div class="overlay_map"></div>
     </section>
 
-    <div id="call_modal" class="call_modal">
-        <?php echo do_shortcode('[contact-form-7 id="58" title="Обратный звонок"]');?>
+    <div id="call_modal" class="call_modal" style="padding:0px">
+        <section class="form_sect dark" style="padding:0px; height:300px;">
+            <?php echo do_shortcode('[contact-form-7 id="58" title="Обратный звонок"]');?>
+        </section>
     </div>
 	
 </div>

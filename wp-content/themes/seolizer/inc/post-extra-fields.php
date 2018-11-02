@@ -29,13 +29,13 @@ add_action("save_post", "post_fields_box_save");
 
 function post_fields_box_save($post_id){
 
-    $_POST['post'] = array_map( 'sanitize_text_field', (array)$_POST['post'] ); // чистим все данные от пробелов по краям
+    $_POST['post'] = array_map( 'sanitize_text_field', (array)$_POST['post'] );
     foreach( $_POST['post'] as $key => $value ){
         if( empty($value) ){
-            delete_post_meta( $post_id, $key ); // удаляем поле если значение пустое
+            delete_post_meta( $post_id, $key );
             continue;
         }
-        update_post_meta( $post_id, $key, $value ); // add_post_meta() работает автоматически
+        update_post_meta( $post_id, $key, $value );
     }
 
 }

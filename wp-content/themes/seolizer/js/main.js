@@ -31,7 +31,7 @@ $( document ).ready(function() {
                 data: {post_id: post_id},
                 type: 'POST',
                 success: function(res){
-                    $('#overlay').fadeIn(400, // снaчaлa плaвнo пoкaзывaем темную пoдлoжку
+                    $('#overlay').fadeIn(400,
                         function(){
                             $('#post_modal').html(res);
                             $('#post_modal').fadeIn();
@@ -45,7 +45,6 @@ $( document ).ready(function() {
         }
     });
 
-
     /* Portfolio popup */
     $('body').on('click', '.open-portfolio-modal', function(e){
         e.preventDefault();
@@ -58,7 +57,7 @@ $( document ).ready(function() {
                 data: {portfolio_id: portfolio_id},
                 type: 'POST',
                 success: function(res){
-                    $('#overlay').fadeIn(400, // снaчaлa плaвнo пoкaзывaем темную пoдлoжку
+                    $('#overlay').fadeIn(400,
                         function(){
                             $('#portfolio_modal').html(res);
                             $('#portfolio_modal').fadeIn();
@@ -74,7 +73,7 @@ $( document ).ready(function() {
 
     /* Call form */
     $('body').on('click', '.call-form-open', function() {
-        $('#overlay').fadeIn(400, // снaчaлa плaвнo пoкaзывaем темную пoдлoжку
+        $('#overlay').fadeIn(400,
             function(){
                 $('#call_modal').fadeIn();
             }
@@ -103,9 +102,5 @@ $( document ).ready(function() {
     $('body').on('mousemove', ".irs-slider", function() {
         $('.block_cost').html($( ".irs-single" ).html());
     });
-    $( ".block_cost" ).click(function() {
-        alert( "block_cost." );
-    });
-
 
 });

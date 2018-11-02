@@ -5,9 +5,6 @@ require_once( $parse_uri[0] . 'wp-load.php' );
 $portfolio_id = $_POST['portfolio_id'];
 $content_post = get_post($portfolio_id);
 $content = $content_post->post_content;
-
-//$views = get_metadata("post", $portfolio_id, 'views', 1);
-//update_post_meta( $portfolio_id, "views", $views + 1 );
 ?>
 
 <div style="width:100%;" data-id="<?=$portfolio_id?>" class="slider_item">
