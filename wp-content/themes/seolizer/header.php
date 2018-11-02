@@ -22,7 +22,6 @@ global $redux_demo;
 
 <body <?php body_class(); ?>>
 	<div class="wrapper">
-	
 		<header class="header">
 				<div class="top_head">
 					<div class="container">
@@ -38,19 +37,11 @@ global $redux_demo;
 									'theme_location' => 'menu-1',
 									'menu_id' => 'primary-menu',
 									'container' => false,
-									'menu_class' => 'menu_list', 
-									
+									'menu_class' => 'menu_list',
 									'container_class' => '',
 									'container_id' => '',
 								));
 							?>
-							<!--<ul class="menu_list">
-								<li class="menu_item"><a href="#">Услуги</a></li>
-								<li class="menu_item"><a href="#">Портфолио</a></li>
-								<li class="menu_item"><a href="#">Компания</a></li>
-								<li class="menu_item"><a href="#">Контакты</a></li>
-							</ul>-->
-
 						</div>
 						<div class="addres">
 							<?=$redux_demo['seolizer-address']?>
@@ -63,33 +54,23 @@ global $redux_demo;
 						</div>
 
 						<div class="wrap_btn">
-							<a href="#" class="btn_callback eModal-1">
+							<a href="#" class="btn_callback call-form-open">
 								<?=$redux_demo['seolizer-button-call']?>
 							</a>
 						</div>
-
-
-
-
 					</div>
 				</div>
 				<div class="middle_head">
 					<div class="container">
 						<h1>
 							<?=$redux_demo['seolizer-header-title']?>
-							
 						</h1>
 						<div class="wrap_btn">
-							<a href="" class="btn_consult"><?=$redux_demo['seolizer-button-consult']?></a>
-							<a href="" class="btn_order"><?=$redux_demo['seolizer-button-order']?></a>
+							<a href="/#consult_form" class="btn_consult"><?=$redux_demo['seolizer-button-consult']?></a>
+							<a href="/#order" class="btn_order"><?=$redux_demo['seolizer-button-order']?></a>
 						</div>
 					</div>
 					<div class="absolut_btn">	
 					</div>
 				</div>
-			</header>
-
-
-<!--
-
--->
+        </header>

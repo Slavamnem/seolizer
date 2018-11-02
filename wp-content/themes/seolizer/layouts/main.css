@@ -1,6 +1,5 @@
-#post_modal{
+.def_popup{
     display:none;
-    /*position: absolute;*/
     position: fixed;
     overflow: auto;
     height:600px;
@@ -11,10 +10,23 @@
     padding:20px;
     left:25%;
     width:50%;
-
     top: 10%;
-
-    /*margin-top:50px;*/
+}
+#post_modal{
+    display:none;
+}
+#call_modal{
+    display:none;
+    position: fixed;
+    height:380px;
+    border:3px solid grey;
+    z-index: 9999;
+    background-color:white;
+    padding:40px;
+    border-radius:25px;
+    left:35%;
+    width:30%;
+    top: 20%;
 }
 .modal-img{
     left:10%;
@@ -31,7 +43,6 @@
     color:red;
     cursor:pointer;
 }
-
 #overlay {
     z-index:3; /* пoдлoжкa дoлжнa быть выше слoев элементoв сaйтa, нo ниже слoя мoдaльнoгo oкнa */
     position:fixed; /* всегдa перекрывaет весь сaйт */

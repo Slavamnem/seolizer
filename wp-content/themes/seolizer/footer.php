@@ -10,10 +10,8 @@
  */
 global $redux_demo;
 ?>
-
 			</div>
-
-			<footer class="footer">
+			<footer class="footer" id="footer">
 				<div class="container">
 					<div class="footer_top">
 						<div class="menu">
@@ -28,21 +26,6 @@ global $redux_demo;
 									'container_id' => '',
 								));
 							?>
-							<!--<ul>
-								<li>
-									<a href="">Услуги</a>
-								</li>
-								<li>
-									<a href="">Портфолио</a>
-								</li>
-								<li>
-									<a href="">Компания</a>
-								</li>
-								<li>
-									<a href="">Контакты</a>
-								</li>
-									
-							</ul>-->
 						</div>
 						<div class="addres">
 							<?=$redux_demo['seolizer-address']?>
@@ -53,7 +36,7 @@ global $redux_demo;
 							<a href="mailto:<?=$redux_demo['seolizer-email']?>" class="email"><?=$redux_demo['seolizer-email']?></a>
 						</div>
 						<div class="wrap_btn">
-							<a href="#" class="btn_callback eModal-1">
+							<a href="#" class="btn_callback call-form-open">
 								<?=$redux_demo['seolizer-button-call']?>
 							</a>
 						</div>
@@ -62,27 +45,13 @@ global $redux_demo;
 								<?=$redux_demo['seolizer-logo']?>
 							</a>
 						</div>
-
-
 					</div>
 					<div class="footer_bottom">
 						<span>2009—2017 seolizer.ru. Продвижение сайтов</span>
-
 					</div>
-
-
-
 				</div>
-
-
 			</footer>
-
-
-
-
 		</div>
-
-
 
 		<script type="text/javascript" src="js/app.min.js"></script>
 		<script async="" defer="" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBiwbJpXgwDY74WuO4ixsOJl5hVcPESFA8&amp;callback=initMap" type="text/javascript">
@@ -110,32 +79,9 @@ global $redux_demo;
 				});
 			}	
 		</script>
-
 		<?php wp_footer(); ?>
-
 	</body>
-
 </html>
-	<!--
-	</div>
-
-	<footer id="colophon" class="site-footer">
-		<div class="site-info">
-			<a href="<?php //echo esc_url( __( 'https://wordpress.org/', 'seolizer' ) ); ?>">
-				<?php
-				/* translators: %s: CMS name, i.e. WordPress. */
-				//printf( esc_html__( 'Proudly powered by %s', 'seolizer' ), 'WordPress' );
-				?>
-			</a>
-			<span class="sep"> | </span>
-				<?php
-				/* translators: 1: Theme name, 2: Theme author. */
-				//printf( esc_html__( 'Theme: %1$s by %2$s.', 'seolizer' ), 'seolizer', '<a href="http://underscores.me/">Underscores.me</a>' );
-				?>
-		</div>
-	</footer>
-</div>
--->
 
 
 

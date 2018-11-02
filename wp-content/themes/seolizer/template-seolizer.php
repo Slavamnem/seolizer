@@ -9,7 +9,7 @@ global $redux_demo;
 <div class="content">
 
     <?php if(count($redux_demo['seolizer-about-us-slides']) > 0): ?>
-	<section class="about_us light">
+	<section class="about_us light" id="about">
 		<div class="container">
 			<h2>Как мы заставляем ваш сайт продавать</h2>
 			<div class="about_list">
@@ -31,7 +31,8 @@ global $redux_demo;
 	</section>
     <?php endif; ?>
 
-    <section class="slider_carousel dark">
+    <div id="portfolio_modal" class="slider_item def_popup"></div>
+    <section class="slider_carousel dark" id="portfolio">
         <div class="container">
             <h2>Портфолио</h2>
 
@@ -51,7 +52,7 @@ global $redux_demo;
                                     <?php the_post_thumbnail(); ?>
                                 </div>
                                 <div class="wrap_text">
-                                    <a href="" class="title_website">https://izobility.com/</a>
+                                    <a href="<?php echo get_metadata("post", $post->ID, 'website', 1) ?>" class="title_website"><?php echo get_metadata("post", $post->ID, 'website', 1) ?>/</a>
                                     <dl>
                                         <dt>Тематика:</dt>
                                         <dd><?php echo get_metadata("post", $post->ID, 'theme', 1) ?></dd>
@@ -63,7 +64,7 @@ global $redux_demo;
                                         <dd><?php echo get_metadata("post", $post->ID, 'visitors', 1) ?></dd>
                                     </dl>
                                     <div class="wrap_btn">
-                                        <a href="">Подробнее</a>
+                                        <a href="#" data-id="<?=$post->ID?>" class="open-portfolio-modal">Подробнее</a>
                                     </div>
                                 </div>
                             </div>
@@ -108,7 +109,7 @@ global $redux_demo;
     <?php endif; ?>
 
     <?php if(count($redux_demo['seolizer-advantages-slides']) > 0): ?>
-    <section class="advantages dark">
+    <section class="advantages dark" id="advantages">
         <div class="container">
             <h2><?=$redux_demo['seolizer-advantages-title'];?></h2>
             <div class="about_list">
@@ -198,7 +199,7 @@ global $redux_demo;
         <div class="container">
             <h2>Последнии новости SEO мира</h2>
 
-            <div id="post_modal" class="news_list"></div>
+            <div id="post_modal" class="news_list def_popup"></div>
             <div id="overlay"></div>
             <div class="news_list">
                 <?php $args = array( 'post_type' => 'post', 'posts_per_page' => 4);
@@ -237,29 +238,79 @@ global $redux_demo;
         </div>
     </section>
 
-<!--    -->
-    <section class="form_sect dark">
+    <section class="form_sect dark" id="consult_form">
         <div class="container">
             <h2>У Вас есть вопросы?</h2>
             <p class="descr">
                 Заполните форму и наш менеджер свяжется с Вами:
             </p>
             <?php echo do_shortcode('[contact-form-7 id="63" title="У Вас есть вопросы?" html_class="form_feedback"]');?>
-<!--            <form action="" class="form_feedback">-->
-<!--                <label for="">-->
-<!--                    <input type="text" name="name" placeholder="Ваше имя*" required />-->
-<!--                </label>-->
-<!--                <label for="">-->
-<!--                    <input type="tel" name="tel" placeholder="Ваш телефон*" required />-->
-<!--                </label>-->
-<!--                <label for="">-->
-<!--                    <input type="text" name="email" placeholder="Ваш e-mail" />-->
-<!--                </label>-->
-<!--                <label class="btn_submit">-->
-<!--                    <input type="submit" name="send" />-->
-<!--                </label>-->
-<!--            </form>-->
+        </div>
+    </section>
 
+    <section class="order dark" id="order">
+        <div class="container">
+            <h2>Заказать расчёт</h2>
+            <p class="order_descr">Чтобы оценить стоимость работ, заполните форму ниже:</p>
+
+            <div class="order_list">
+                <div class="order_item">
+                    <p class="title">
+                        Какие услуги Вам интересны?
+                    </p>
+                    <ul class="order_service_list">
+                        <li>SEO-опитимизация</li>
+                        <li>Контекстная реклама</li>
+                        <li>SMM-продвижение</li>
+                        <li>Продвижение видео</li>
+                    </ul>
+                </div>
+                <div class="order_item">
+                    <p class="title">
+                        Информация о Вас:
+                    </p>
+                    <form action="" class="order_form">
+                        <label for="">
+                            <input type="text" name="name" placeholder="Ваше имя*" required />
+                        </label>
+                        <label for="">
+                            <input type="tel" name="tel" placeholder="Ваш телефон*" required />
+                        </label>
+                        <label for="">
+                            <input type="text" name="email" placeholder="Ваш e-mail" />
+                        </label>
+                        <label for="">
+                            <input type="text" name="site" placeholder="Ваш сайт"  />
+                        </label>
+                    </form>
+                </div>
+                <div class="order_item">
+                    <p class="title">
+                        Предполагаемый бюджет?
+                    </p>
+                    <form action="">
+                        <input type="text" id="value_sum" name="value_sum" value="" />
+                    </form>
+
+                    <div class="block_price">
+                        <div class="item_count">
+                            20 000 ₽
+                        </div>
+                        <div class="item_count">
+                            800 000 ₽
+                        </div>
+                    </div>
+
+                    <div class="block_cost">
+                        60 000 ₽
+                    </div>
+                </div>
+            </div>
+            <div class="wrap_btn">
+                <a href="">
+                    Рассчитать
+                </a>
+            </div>
         </div>
     </section>
 
@@ -268,7 +319,9 @@ global $redux_demo;
         <div class="overlay_map"></div>
     </section>
 
-<!--    <br><br><br><br><br><br><br><br><br><br><br><br><br><br>-->
+    <div id="call_modal" class="call_modal">
+        <?php echo do_shortcode('[contact-form-7 id="58" title="Обратный звонок"]');?>
+    </div>
 	
 </div>
 
